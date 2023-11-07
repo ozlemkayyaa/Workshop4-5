@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:introapp2/main.dart';
+import 'package:introapp2/home_screen.dart';
 
 class ResultScreen extends StatefulWidget {
   final int score;
   const ResultScreen(this.score, {Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _ResultScreenState createState() => _ResultScreenState();
 }
 
@@ -13,7 +14,7 @@ class _ResultScreenState extends State<ResultScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 147, 157, 207),
+      backgroundColor: const Color.fromARGB(255, 116, 40, 143),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -30,22 +31,14 @@ class _ResultScreenState extends State<ResultScreen> {
             const SizedBox(
               height: 80.0,
             ),
-            const Text(
-              "SCORE",
-              style: TextStyle(
-                color: Color.fromARGB(255, 99, 17, 162),
-                fontSize: 30.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
             const SizedBox(
               height: 30.0,
             ),
             Text(
-              "${widget.score}",
+              "SCORE: ${widget.score}",
               style: const TextStyle(
-                color: Color.fromARGB(255, 99, 17, 162),
-                fontSize: 80.0,
+                color: Colors.white,
+                fontSize: 50.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -53,18 +46,20 @@ class _ResultScreenState extends State<ResultScreen> {
               height: 80.0,
             ),
             MaterialButton(
+              padding: const EdgeInsets.all(12.0),
+              shape: const StadiumBorder(),
               onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const HomeScreen()));
               },
-              color: Colors.orange,
+              color: const Color.fromARGB(255, 251, 147, 3),
               child: const Text(
-                "Try Again",
+                "  Try Again  ",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 15.0,
+                  fontSize: 20.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
